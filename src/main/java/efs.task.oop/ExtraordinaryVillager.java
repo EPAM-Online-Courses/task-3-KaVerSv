@@ -21,4 +21,8 @@ public class ExtraordinaryVillager extends Villager{
         super(name, age);
         this.skill = skill;
     }
+
+    public void sayHello() {
+        System.out.println("Greetings traveler... I'm " + name + " and I'm " + age + " years old " + this.skill.getAction());
+    }   
 }
