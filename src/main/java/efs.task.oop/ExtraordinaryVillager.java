@@ -22,7 +22,7 @@ public class ExtraordinaryVillager extends Villager{
         this.skill = skill;
     }
 
-    public void sayHello() {
+    @override public void sayHello() {
         System.out.println("Greetings traveler... I'm " + name + " and I'm " + age + " years old " + this.skill.getAction());
     }   
 }
