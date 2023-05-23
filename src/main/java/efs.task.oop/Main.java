@@ -2,42 +2,40 @@ package efs.task.oop;
 
 public class Main {
     public static void main(String[] args) {
+        Villager kashya = new Villager("Kashya", 30);
+        Villager akara = new ExtraordinaryVillager("Akara", 40, ExtraordinaryVillager.Skill.SHELTER);
+        Villager gheed = new Villager("Gheed", 50);
+        Villager deckardCain = new ExtraordinaryVillager("Deckard Cain", 85, ExtraordinaryVillager.Skill.IDENTIFY);
+        Villager warriv = new Villager("Warriv", 35);
+        Villager flawia = new Villager("Flawia", 25);
 
+        kashya.sayHello();
+        akara.sayHello();
+        gheed.sayHello();
+        deckardCain.sayHello();
+        warriv.sayHello();
+        flawia.sayHello();
 
-        Villager[] villagers= {
-            new Villager("Kashya", 30),
-            new ExtraordinaryVillager("Akara", 40, ExtraordinaryVillager.Skill.SHELTER),
-            new Villager("Gheed", 50),
-            new ExtraordinaryVillager("Deckard Cain", 85,ExtraordinaryVillager.Skill.IDENTIFY),
-            new Villager("Warriv", 35),
-            new Villager("Flawia", 25)
-        };
-
-        for (Villager villager : villagers) {
-            villager.sayHello();
-        }
-
-        Object objectDeckardCain = villagers[1];
-        Object objectAkara = villagers[3];
+        Object objectDeckardCain = deckardCain;
+        Object objectAkara = akara;
 
         while (Monsters.getMonstersHealth() > 0) {
             if (Monsters.andariel.getHealth() > 0) {
-                fight(villagers[0], Monsters.andariel);
-                fight(villagers[2], Monsters.andariel);
-                fight(villagers[4], Monsters.andariel);
-                fight(villagers[5], Monsters.andariel);
+                fight(kashya, Monsters.andariel);
+                fight(gheed, Monsters.andariel);
+                fight(warriv, Monsters.andariel);
+                fight(flawia, Monsters.andariel);
             }
             if (Monsters.blacksmith.getHealth() > 0) {
-                fight(villagers[0], Monsters.andariel);
-                fight(villagers[2], Monsters.andariel);
-                fight(villagers[4], Monsters.andariel);
-                fight(villagers[5], Monsters.andariel);
+                fight(kashya, Monsters.andariel);
+                fight(gheed, Monsters.andariel);
+                fight(warriv, Monsters.andariel);
+                fight(flawia, Monsters.andariel);
             }
         }
-
         System.out.println("Obozowisko ocalone!");
-        villagers[3] = (ExtraordinaryVillager)objectDeckardCain;
-        villagers[1] = (ExtraordinaryVillager)objectAkara;
+        deckardCain = (ExtraordinaryVillager)objectDeckardCain;
+        akara = (ExtraordinaryVillager)objectAkara;
     }
 
     public static void fight(Villager villager, Monster monster) {

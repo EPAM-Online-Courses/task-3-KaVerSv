@@ -1,10 +1,9 @@
 package efs.task.oop;
 
-public class Villager implements Fighter{
-    protected String name;
-    protected int age;
-    protected  int health;
-
+public class Villager implements Fighter {
+    String name;
+    int age;
+    protected int health;
 
     public Villager(String name, int age) {
         this.name = name;
@@ -13,7 +12,7 @@ public class Villager implements Fighter{
     }
 
     public void sayHello() {
-        System.out.println("Greetings traveler... I'm " + this.name + " and I'm " + this.age + " years old");
+        System.out.println("Greetings traveler... I'm " + name + " and I'm " + age + " years old");
     }
 
     public int getHealth() {
