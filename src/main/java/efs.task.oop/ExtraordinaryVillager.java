@@ -1,3 +1,5 @@
+package efs.task.oop;
+
 public class ExtraordinaryVillager extends Villager{
     
     public enum Skill {
@@ -22,7 +24,18 @@ public class ExtraordinaryVillager extends Villager{
         this.skill = skill;
     }
 
-    @override public void sayHello() {
+    @Override
+    public void sayHello(){
         System.out.println("Greetings traveler... I'm " + name + " and I'm " + age + " years old " + this.skill.getAction());
-    }   
+    }
+
+    @Override
+    public void attack(Fighter victim) {
+        victim.takeHit(0);
+    }
+
+    @Override
+    public void takeHit(int damage) {
+        this.health = 0;
+    }
 }
